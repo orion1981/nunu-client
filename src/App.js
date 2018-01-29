@@ -28,11 +28,15 @@ class App extends Component {
               <img src={logo} className="App-logo" alt="logo" />
               <h1 className="App-title">Welcome to React</h1>
             </header>
-              <Link to="/login" activeStyle={{ color: 'red' }}><Container><Button className="Homepage-button" size="massive" color="blue">Login</Button></Container></Link>
-              <Link to="/LocationList" activeStyle={{ color: 'red' }}><Container><Button className="Homepage-button" size="massive" color="blue">Location List</Button></Container></Link>
-              <Link to="/PackagingList" activeStyle={{ color: 'red' }}><Container><Button className="Homepage-button" size="massive" color="blue">Packaging List</Button></Container></Link>
-              <Link to="/ProductionBreakdown" activeStyle={{ color: 'red' }}><Container><Button className="Homepage-button" size="massive" color="blue">Production Breakdown</Button></Container></Link>
-              <Link to="/SingleLocation" activeStyle={{ color: 'red' }}><Container><Button className="Homepage-button" size="massive" color="blue">Single Location</Button></Container></Link>
+              <Link to="/login" ><Container><Button className="Homepage-button" size="massive" color="blue">Login</Button></Container></Link>
+                <br/>
+              <Link to="/LocationList" ><Container><Button className="Homepage-button" size="massive" color="blue">Location List</Button></Container></Link>
+                <br/>
+              <Link to="/PackagingList" ><Container><Button className="Homepage-button" size="massive" color="blue">Packaging List</Button></Container></Link>
+                <br/>
+              <Link to="/ProductionBreakdown" ><Container><Button className="Homepage-button" size="massive" color="blue">Production Breakdown</Button></Container></Link>
+                <br/>
+              <Link to="/SingleLocation" ><Container><Button className="Homepage-button" size="massive" color="blue">Single Location</Button></Container></Link>
           </div>
         </Switch>
       </Router>
