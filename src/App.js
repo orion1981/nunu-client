@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import { Button, Container } from 'semantic-ui-react';
-
+import firebase from 'firebase';
 
 import Login from './containers/Login';
 import LocationList from './containers/LocationList';
@@ -14,6 +14,17 @@ import SingleLocation from './containers/SingleLocation';
 
 
 class App extends Component {
+  componentWillMount() {
+    firebase.initializeApp({
+         apiKey: 'AIzaSyD_RKVCcrejbivprKYiE6NANDCEPcE4fZ8',
+         authDomain: 'nunu-auth.firebaseapp.com',
+         databaseURL: 'https://nunu-auth.firebaseio.com',
+         projectId: 'nunu-auth',
+         storageBucket: 'nunu-auth.appspot.com',
+         messagingSenderId: '972617422839'
+       });
+  }
+
   render() {
     return (
       <Router>
