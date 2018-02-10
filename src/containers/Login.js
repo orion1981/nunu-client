@@ -1,15 +1,23 @@
-import React from 'react';
-import { Input, Container } from 'semantic-ui-react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { emailChanged, passwordChanged, loginUser } from '../actions';
+import { Input, Container, Button } from 'semantic-ui-react';
 
-export default class Login extends React.Component {
-  constructor(){
-    super()
+class Login extends Component {
+  onEmailChange(text) {
+   this.props.emailChanged(text);
+ }
 
-    this.state = {
-      password: '',
-      email: ''
-    }
-  }
+ onPasswordChange(text) {
+   this.props.passwordChanged(text);
+ }
+
+  onButtonPress() {
+   const { email, password } = this.props;
+
+   this.props.loginUser({ email, password });
+ }
+
 
   render(){
     return(
@@ -32,7 +40,23 @@ export default class Login extends React.Component {
                 onChangeText={password => this.setState({ password })}
                 />
           </Container>
+          <Container>
+            <Button onPress={this.onButtonPress.bind(this)}>
+              Login
+            </Button>
+          </Container>
       </div>
     )
   }
 }
+
+const mapStateToProps = ({ auth }) => {
+  const { email, password, error, loading } = auth;
+  return { email, password, error, loading };
+};
+
+export default connect(mapStateToProps, {
+  emailChanged,
+  passwordChanged,
+  loginUser
+ })(Login);

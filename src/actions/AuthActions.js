@@ -7,9 +7,9 @@ import {
   LOGIN_USER_SUCCESS,
   LOGIN_USER_FAIL,
   LOGIN_USER
-} from '.types';
+} from './types';
 
-xport const emailChanged = (text) => {
+export const emailChanged = (text) => {
   return {
     type: EMAIL_CHANGED,
     payload: text
@@ -49,5 +49,5 @@ const loginUserSuccess = (dispatch, user) => {
     payload: user
   });
 
-  Actions.main();
+
 };
