@@ -27,7 +27,7 @@ class Login extends Component {
             <Input
                 placeholder="user@gmail.com"
                 label="Email"
-                value={this.state.email}
+                value={this.email}
                 onChangeText={email => this.setState({ email })}
               />
           </Container>
@@ -36,7 +36,7 @@ class Login extends Component {
                 secureTextEntry
                 placeholder="password"
                 label="Password"
-                value={this.state.password}
+                value={this.password}
                 onChangeText={password => this.setState({ password })}
                 />
           </Container>
